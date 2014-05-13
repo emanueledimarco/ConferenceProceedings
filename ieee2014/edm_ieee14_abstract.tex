@@ -1,0 +1,171 @@
+\documentclass[11pt]{article}
+\usepackage{multicol}
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\Roman{subsection}} % Roman numerals for subsections
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hoffset = -2.0 cm
+\voffset = -3.0 cm
+\textheight = 25.0 cm
+\marginparwidth = 1.0 cm
+\evensidemargin = 1.0 cm
+\textwidth =16.1 cm
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\def\bibname{ } 
+%\def\nextref{\global\advance\refno by 1 \number\refno\relax}
+%
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\title{\vspace{-15mm}\fontsize{14pt}{8pt}\selectfont\textbf{The CMS electromagnetic calorimeter calibration and  performance during LHC Run I and expectations for Run II}} % Article title
+
+\author{
+\large
+\textsc{Emanuele Di Marco}\thanks{ on behalf of CMS Collaboration}\\[2mm] % Your name
+European Organization for Nuclear Research (CERN) \\ % Your institution
+emanuele.di.marco@cern.ch % Your email address
+\vspace{-5mm}
+}
+\date{}
+
+\begin{document}
+
+\maketitle % Insert title
+%\thispagestyle{fancy} % All pages have headers and footers
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+\begin{abstract}
+\noindent The CMS ECAL is a high-resolution, hermetic, and homogeneous
+electromagnetic calorimeter made of 75,848 scintillating lead
+tungstate (PbWO$_4$) crystals. It relies on precision calibration in
+order to achieve and maintain its design performance. A set of
+inter-calibration procedures is carried out to normalize the
+differences in crystal light yield and photodetector response between
+channels. Different physics channels such as low mass di-photon
+resonances, electrons from W and Z decays and the azimuthal symmetry
+of low energy deposits from minimum bias events are used. A laser
+monitoring system is used to measure and correct for response changes,
+which arise mainly from the harsh radiation environment at the
+LHC. The challenges of the different calibration techniques are
+discussed along with the performance evolution during Run I. The
+impact on physics is illustrated through the successful quest for the
+Higgs boson via its electromagnetic decays, and the subsequent mass
+measurement of the newly discovered particle. Conclusions are drawn
+for the performance to be expected from 2015 onwards, following the
+start of the LHC Run II.
+\end{abstract}
+
+\begin{multicols}{2}
+
+\section{Introduction}
+
+The electromagnetic calorimeter (ECAL) of the Compact Muon Solenoid
+(CMS) is a hermetic, fine grained homogeneous crystal calorimeter
+designed to achieve excellent energy resolution in a wide range of
+photon and electron momenta. One of the primary goals of CMS is the
+discovery of the Standard Model (SM) Higgs boson via its decays to
+di-bosons.  In particular the sensitivity of the decay to two photons
+is driven by the invariant mass resolution, and the sensitivity in the
+four lepton by the capability to reconstruct and identify electrons
+down to few GeV of transverse momenta.  The ECAL has to maintain high
+energy resolution up to the TeV energy range in order to allow the
+discovery of possible new physics resonances involving electrons and
+photons, and possible candidates for the dark matter.  The ECAL is
+designed with fine transverse granularity in order to maintain high
+identification performances for electrons and photons with respect to
+hadronic jets.
+
+\section{Overview of the ECAL in LHC Run I and Run II}
+The ECAL is located inside the CMS superconducting solenoidal magnet
+and made of 61,200 PbWO$_4$ scintillating crystals, mounted in the
+central barrel part (EB), closed by 7324 crystals in each of the two
+endcaps (EE). The scintillation light is detected by avalanche
+photodiodes in the barrel section and by vacuum phototriodes in the
+two endcap sections. A preshower detector (ES), based on lead
+absorbers equipped with silicon strip sensors, is installed in front
+of the endcaps crystals in order to improve $\gamma$ and $\pi^0$
+resolution. The ECAL geometry for the LHC Run II is expected to be the
+same as in Run I, and the operation and calibrations workflow are
+expected to be similar, even though new challenges arise for the
+higher instantaneous luminosity and radiation doses expected for the
+Run II starting in 2015.
+
+\section{ECAL Monitoring and Calibration}
+
+
+The main effect on the ECAL crystals of radiation at the LHC is a
+wavelength-dependent loss of crystal transparency without change to
+the scintillation mechanism.  A secondary effect of the radiation is
+that the VPT response depends on the accumulated photocathode charge.
+These effects are larger in the high $\eta$ regions (in particular the
+endcaps) and they will be more challenging in Run II, when the
+instantaneous luminosity is expected to increase up to $\approx$
+1.5$\times$10$^{34}$, twice the value of Run I. The response change is
+measured with a dedicated laser monitoring system. The laser signals
+drop exponentially during periods of LHC operation, reaching a
+saturation level which depends on the dose-rate (note that the
+dose-rate increased in the different periods due to the increasing LHC
+luminosity). The observed losses reached during Run I will be
+presented in the full $\eta$ region covered by the ECAL. The
+monitoring flow in Run II will be similar to the Run I one, with some
+changes that will be presented.  The calibration procedure will be
+presented, relying upon different methods: 
+\begin{enumerate}
+\item $\phi$-symmetry, to provide fast inter-calibration by
+  exploiting the invariance around the beam axis of energy flow in
+  minimum bias events,
+\item $\pi^0$ and $\eta$ calibration, using the invariant mass peak
+  from photon pairs,
+\item electrons from $Z\to e^+e^-$ pairs and $W\to e\nu$ decays,
+  comparing the energy measured in ECAL to the track momentum measured
+  in the silicon tracker.
+\end{enumerate}
+The performances of these calibration in Run I will be presented, and
+the techniques adopted to maintain them with the higher LHC rates and
+pileup will be presented.
+
+\section{ECAL energy, H$\to\gamma\gamma$ and H$\to4\ell$ resolution}
+The search for the Higgs Boson in the two-photon decay channel relies
+on the energy resolution and the position measurement within ECAL of
+the reconstructed photons. The simulation of response to photons is
+tuned in the different ECAL regions to match the one observed in situ
+from $Z\to e^+e^-$ events, where electrons are reconstructed as
+photons.  The relative invariant mass resolution of simulated
+H$\to\gamma\gamma$ events will be presented.  The H$\to4\ell$ search,
+with decays involving two or four electrons, cover an electron
+momentum range from 7 GeV to $\approx$ 50 GeV, for most of which the
+energy measurement is dominated by ECAL.  The simulated mass
+resolution with the ECAL, or with ECAL plus tracker combination, after
+the simulation tuning to match the data will be presented. A
+comparison of the Higgs boson mass measured in the two decay modes
+most sensitive to its signal will be presented.
+
+\section{Conclusions}
+The CMS ECAL has played a major role in the discovery of the Higgs
+boson during LHC Run I. The response variations during three years of
+data taking in different conditions have been monitored with the
+expected precision, and allowed to maintain its outstanding design
+performances. The Run II poses new challenges, in terms of the higher
+rates expected for the calibration physics triggers, the higher
+radiation doses that will affect the crystal transparency variations,
+and the higher pileup from both the same and different bunch
+crossings.
+
+\end{multicols}
+
+
+\end{document}
