@@ -138,12 +138,58 @@
 \newcommand{\chanHWW}{\ensuremath{\PH\to\PW\PW\to\ell\nu\ell\nu}}
 \newcommand{\chanHgg}{\ensuremath{\PH\to\Pgg\Pgg}}
 \newcommand{\qqbar}{\ensuremath{\mathrm{\Pq\Paq}} }
+\newcommand{\wgamma}{\ensuremath{\PW\Pgg}}
+\newcommand{\wjets}{\ensuremath{W+}jets} 
+\newcommand{\tw}{\ensuremath{\mathrm{t}\PW}} 
+\newcommand{\ttbar}{\ensuremath{\mathrm{t}\overline{\mathrm{t}}}} % t-tbar
 
 % units
 %\newcommand{\fbinv}{\ensuremath{fb^{-1}}}
 \newcommand{\fbinv}{\ensuremath{\,\mathrm{fb}^\mathrm{-1}}}
 \newcommand{\GeV}{\ensuremath{\,\mathrm{Ge\hspace{-.08em}V}}}
 \newcommand{\TeV}{\ensuremath{\,\mathrm{Te\hspace{-.08em}V}}}
+
+% kinematics
+\newcommand{\PT}{\ensuremath{p_{\mathrm{T}}}}
+\newcommand{\pt}{\ensuremath{p_{\mathrm{T}}}}
+\newcommand{\ET}{\ensuremath{E_{\mathrm{T}}}}
+\newcommand{\HT}{\ensuremath{H_{\mathrm{T}}}}
+\newcommand{\et}{\ensuremath{E_{\mathrm{T}}}}
+\newcommand{\PTm}{\ensuremath{{p}_\mathrm{T}\hspace{-1.02em}/\kern 0.5em}}
+\newcommand{\PTslash}{\PTm}
+\newcommand{\ETm}{\ensuremath{E_{\mathrm{T}}^{\mathrm{miss}}}}
+\newcommand{\MET}{\ETm}
+\newcommand{\ETmiss}{\ETm}
+\newcommand{\ETslash}{\ensuremath{E_{\mathrm{T}}\hspace{-1.1em}/\kern0.45em}}
+\newcommand{\VEtmiss}{\ensuremath{{\vec E}_{\mathrm{T}}^{\mathrm{miss}}}}
+\newcommand{\ptvec}{\ensuremath{{\vec p}_{\mathrm{T}}}}
+\newcommand{\met}{\ETm}
+\newcommand{\vmet}{\ensuremath{\vec{E}_\mathrm{T}}^{\mathrm{miss}}}
+\newcommand{\mth}{\ensuremath{m_{\mathrm{T}}}}
+\newcommand{\mll}{\ensuremath{m_{\ell\ell}}}
+\newcommand{\delphillmet}{\ensuremath{\Delta\phi(\ell\ell,\vec{E}_\mathrm{T}^{\mathrm{miss}})}}
+\newcommand{\ptll}{\ensuremath{\pt^{\ell\ell}}}
+
+
+% softwares and MC
+\newcommand{\MCFM} {\textsc{mcfm}}
+\newcommand{\JHUGEN} {\textsc{JHUGen}}
+
+% kinematic discriminants
+\newcommand{\KD}{\ensuremath{{\cal D}^{\rm kin}_{\rm bkg}} }
+\newcommand{\superKD}{\ensuremath{{\cal D}_{\rm bkg}} }
+\newcommand{\spinKD}{\ensuremath{{\cal D}_{J^P}} }
+\newcommand{\psvectorKD}{\ensuremath{{\cal D}_{1^-}} }
+\newcommand{\vectorKD}{\ensuremath{{\cal D}_{1^+}} }
+\newcommand{\zerominusKD}{\ensuremath{{\cal D}_{\rm 0^-}} }
+\newcommand{\zerohplusKD}{\ensuremath{{\cal D}_{\rm 0_h^+}} }
+\newcommand{\lambdaKD}{\ensuremath{{\cal D}_{\Lambda_{1}}} }
+\newcommand{\interfzerominusKD}{\ensuremath{{\cal D}_{\rm bkg}^{SM,{0^-}}} }
+\newcommand{\interfzerohplusKD}{\ensuremath{{\cal D}_{\rm bkg}^{SM,{0_h^+}}} }
+\newcommand{\VDj}{\mathrm{{\cal D}_{\rm jet}} }
+\newcommand{\VDu}{\mathrm{{\cal D}_{\PT}} }
+\newcommand{\MassD}{\mathrm{{\cal D}_{\rm mass}} }
+
 
 % fonts
 \def\sss{\scriptscriptstyle}
@@ -228,12 +274,15 @@ for several alternative models.
 
 \section{Kinematic observables}
 \label{sec:observables}
+\input{section3}
+
+\section{Study of exotic spin-one and spin-two couplings}
+\label{sec:exotics}
+\input{section4}
 
 \section{Study of spin-zero HVV couplings}
 \label{sec:spinzero}
 
-\section{Study of exotic spin-one and spin-two couplings}
-\label{sec:spinzero}
 
 \section{Conclusions}
 \label{sec:conclusions}
