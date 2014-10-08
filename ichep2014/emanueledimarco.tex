@@ -108,9 +108,45 @@
 \usepackage[figuresright]{rotating}
 
 % put your own definitions here:
-%   \newcommand{\cZ}{\cal{Z}}
-%   \newtheorem{def}{Definition}[section]
-%   ...
+% particles
+\newcommand{\PH}{\ensuremath{\mathrm{H}}}
+\newcommand{\V}{\ensuremath{\mathrm{V}}}
+\newcommand{\PZ}{\ensuremath{\mathrm{Z}}}
+\newcommand{\PW}{\ensuremath{\mathrm{W}}}
+\newcommand{\PWm}{\ensuremath{\mathrm{W^-}}}
+\newcommand{\PWp}{\ensuremath{\mathrm{W^+}}}
+\newcommand{\Pgg}{\ensuremath{\gamma}}
+\newcommand{\Pgs}{\ensuremath{\gamma^*}}
+\newcommand{\Pg}{\ensuremath{\mathrm{g}}} % generic gluon
+\newcommand{\Pe}{\ensuremath{\mathrm{\mathrm{e}}}}
+\newcommand{\Pep}{\ensuremath{\mathrm{\mathrm{e}}^{+}}}
+\newcommand{\Pem}{\ensuremath{\mathrm{\mathrm{e}}^{-}}}
+\newcommand{\Pepm}{\ensuremath{\mathrm{\mathrm{e}}^{\pm}}}
+\newcommand{\Pemp}{\ensuremath{\mathrm{\mathrm{e}}^{\mp}}}
+\newcommand{\Pm}{\ensuremath{\mu}}
+\newcommand{\Pmp}{\ensuremath{\mu^{+}}}
+\newcommand{\Pmm}{\ensuremath{\mu^{-}}}
+\newcommand{\Pmpm}{\ensuremath{\mu^{\pm}}}
+\newcommand{\Pmmp}{\ensuremath{\mu^{\mp}}}
+\newcommand{\Pq}{\ensuremath{\mathrm{q}}}
+\newcommand{\Paq}{\ensuremath{\mathrm{\overline{q}}}}
+
+\newcommand{\X}{\ensuremath{\mathrm{X}}}
+
+% channels
+\newcommand{\chanHZZ}{\ensuremath{\PH\to\PZ\PZ\to4\ell}}
+\newcommand{\chanHWW}{\ensuremath{\PH\to\PW\PW\to\ell\nu\ell\nu}}
+\newcommand{\chanHgg}{\ensuremath{\PH\to\Pgg\Pgg}}
+\newcommand{\qqbar}{\ensuremath{\mathrm{\Pq\Paq}} }
+
+% units
+%\newcommand{\fbinv}{\ensuremath{fb^{-1}}}
+\newcommand{\fbinv}{\ensuremath{\,\mathrm{fb}^\mathrm{-1}}}
+\newcommand{\GeV}{\ensuremath{\,\mathrm{Ge\hspace{-.08em}V}}}
+\newcommand{\TeV}{\ensuremath{\,\mathrm{Te\hspace{-.08em}V}}}
+
+% fonts
+\def\sss{\scriptscriptstyle}
 
 % add words to TeX's hyphenation exception list
 %\hyphenation{author another created financial paper re-commend-ed Post-Script}
@@ -161,14 +197,14 @@ Studies of the Higgs boson spin and parity are presented using data
 samples corresponding to the $\gamma\gamma$, ZZ, and WW decay
 channels. The analyses are based on pp collision data collected at
 centre-of-mass energies of 7 and 8 TeV, corresponding to integrated
-luminosities of approximately 5/fb and 20/fb, respectively. The data
+luminosities of approximately 5$\fbinv$ and 20$\fbinv$, respectively. The data
 are compared to the expectations for a Standard Model Higgs boson, and
 for several alternative models.
 \end{abstract}
 
 \begin{keyword}
 %% keywords here, in the form: keyword \sep keyword
-
+  
 %% MSC codes here, in the form: \MSC code \sep code
 %% or \MSC[2008] code \sep code (2000 is the default)
 
@@ -182,8 +218,25 @@ for several alternative models.
 % \linenumbers
 
 %% main text
-\section{}
-\label{}
+\section{Introduction}
+\label{sec:introduction}
+\input{section1}
+
+\section{Phenomenology of anomalous HVV interactions}
+\label{sec:phenomenology}
+\input{section2}
+
+\section{Kinematic observables}
+\label{sec:observables}
+
+\section{Study of spin-zero HVV couplings}
+\label{sec:spinzero}
+
+\section{Study of exotic spin-one and spin-two couplings}
+\label{sec:spinzero}
+
+\section{Conclusions}
+\label{sec:conclusions}
 
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
@@ -204,6 +257,8 @@ for several alternative models.
 \nocite{*}
 \bibliographystyle{elsarticle-num}
 \bibliography{martin}
+
+%\input{emanueledimarco.bib}
 
 %% Authors are advised to use a BibTeX database file for their reference list.
 %% The provided style file elsarticle-num.bst formats references in the required Procedia style
