@@ -1,6 +1,7 @@
 The measurements of the spin-parity properties of the Higgs boson make
 use of the kinematics of the four leptons in the event, for the
-$\PH\to\V\V$ channels.  For a spin-zero resonance, there is no
+$\PH\to\V\V$ decay channels, and of the two photons, for the
+$\chanHgg$ decay channel.  For a spin-zero resonance, there is no
 correlation between the initial state polarization and the final state
 kinematic distributions, while for a spin-one or spin-two boson such a
 correlation introduces non-trivial dependence of the final state on
@@ -36,14 +37,14 @@ for the $\chanHWW$ are the same as described in
 %% of any charged-particle trajectory to the ECAL.  Jets are
 %% reconstructed from the PF candidates, clustered with the anti-$k_t$
 %% algorithm~\cite{Cacciari:2008gp, Cacciari:2011ma} with a size
-%% parameter of 0.5, and they are used to categorise events to enhance
+%% parameter of 0.5, and they are used to categorize events to enhance
 %% gluon fusion or VBF productions. The missing transverse energy vector
 %% $\vmet$ is defined as the negative vector sum of the transverse
 %% momenta of all reconstructed particles (charged or neutral) in the
 %% event, with $\met = |\vmet|$.
 
-For the $\chanHZZ$ decay, events are selected with at
-least four identified and isolated electrons or muons.  Each $\PZ\to
+For the $\chanHZZ$ decay, events are selected with at least four
+identified and isolated electrons or muons.  Each $\PZ\to
 \ell^+\ell^-$ candidate originating from a pair of leptons of the same
 flavor and opposite charge is required.  The $\ell^+\ell^-$ pair with
 an invariant mass, $m_1$, nearest to the nominal $\PZ$ boson mass is
@@ -52,9 +53,9 @@ retained and is denoted $\PZ_{1}$ if it is in the range $40 \le m_1
 is required to have $12 \le m_2 \le 120 \GeV$.  At least one lepton
 should have $\PT \ge 20 \GeV$, another one $\PT \ge 10 \GeV$ and any
 oppositely charged pair of leptons among the four selected must
-satisfy $m_{\ell\ell} \ge 4 \GeV$. Events are selected in a range
-around the observed 125.6~\GeV resonance, $105.6 \le m_{4\ell} \le
-140.6 \GeV$.
+satisfy $m_{\ell\ell} \ge 4 \GeV$. For the spin-parity measurements,
+events are selected in a range around the observed 125.6~\GeV
+resonance, $105.6 \le m_{4\ell} \le 140.6 \GeV$.
 %
 The dominant background, $\Pq\Paq \to \PZ\PZ/\PZ\Pgs$ and $\Pg\Pg \to
 \PZ\PZ/\PZ\Pgs$ processes, are evaluated from simulation, while the
@@ -62,7 +63,7 @@ reducible background, denoted as $\PZ + X$, is estimated from data
 control samples with relaxed lepton identification criteria.
 %
 The event yields are reported in~~\cite{Chatrchyan:2013mxa}.
-%
+
 For this channel, the four-momenta of the $\PH \rightarrow
 4\mathrm{\ell}$ decay products carry eight independent degrees of
 freedom, which fully describe the kinematic configuration of a
@@ -98,15 +99,16 @@ characteristic alternative spin-zero scenarios.
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-One of the approaches pursued in this channels is to parameterise the
+One of the approaches pursued in this channels is to parameterize the
 multidimensional distributions as a function of the parameters of
-interests, which in this approach are the anomalous couplings. Given
-the difficulty to populate eight-dimensional distributions for
-components that cannot be described analytically, like the
-$\Pg\Pg\to\PZ\PZ/\PZ\Pgs$ and $Z+$X processes, this approach is only
-pursued for some of the measurements for a spin-zero resonance.
-The analytic parameterization is the product of the differential decay cross section, 
-$d\sigma_{4\ell}$, and the production spectrum, $W_{\mathrm{prod}}$, written as
+interests, which in this approach are the anomalous
+couplings~\cite{Chen:2014pia}. Given the difficulty to populate
+eight-dimensional distributions for components that cannot be
+described analytically, like the $\Pg\Pg\to\PZ\PZ/\PZ\Pgs$ and $Z+$X
+processes, this approach is only used for a subset of the measurements
+for a spin-zero resonance.  The analytic parameterization is the
+product of the differential decay cross section, $d\sigma_{4\ell}$,
+and the production spectrum, $W_{\mathrm{prod}}$, written as
 %
 \begin{eqnarray}
 \label{eqn:gen_pdf}
@@ -127,19 +129,19 @@ resolution on the lepton direction is neglected.
 
 
 The eight-dimensional analysis can be reduced to a three-dimensional
-one by storing the full kinematic information in a discriminant
+one by storing the full kinematic information in discriminants
 designed for the separation of either background (${\cal D}_{\rm
   bkg}$), the alternative signal components (${\cal D}_{J^P}$), or
 interference between those components (${\cal D}_{\rm int}$).  The
 construction of the kinematic discriminants follows the matrix element
 likelihood approach ({\sc MELA}
-package~\cite{Chatrchyan:2012ufa,Gao:2010qx}),
-where the probabilities for an event are calculated using the LO
-matrix elements as a function of angular and mass observables.  The
-$\JHUGEN$ matrix elements are used for the signal, $\Pg\Pg$ or
-$\qqbar\to \X\to \PZ\PZ$ / $\PZ\Pgs$ / $\Pgs\Pgs\to4\ell$, and $\MCFM$
-matrix elements for the background, $\Pg\Pg$ or $\qqbar\to\PZ\PZ$ /
-$\PZ\Pgs$ / $\Pgs\Pgs$ / $\PZ\to 4\ell$.
+package~\cite{Chatrchyan:2012ufa,Gao:2010qx}), where the probabilities
+for an event are calculated using the LO matrix elements as a function
+of angular and mass observables.  The $\JHUGEN$ matrix elements are
+used for the signal, $\Pg\Pg$ or $\qqbar\to \X\to \PZ\PZ$ / $\PZ\Pgs$
+/ $\Pgs\Pgs\to4\ell$, and $\MCFM$ matrix elements for the background,
+$\Pg\Pg$ or $\qqbar\to\PZ\PZ$ / $\PZ\Pgs$ / $\Pgs\Pgs$ / $\PZ\to
+4\ell$.
 %
 To remove the dependence of the spin-one and spin-two discriminants on
 the production model, the probability ${\cal P}^{\rm kin}$ is averaged
@@ -156,53 +158,52 @@ for a spin-zero resonance: ${\cal D}^{\rm dec}_{\rm bkg}$ and ${\cal
 For the $\chanHWW$ decay, events with exactly one electron and one
 muon are selected, passing tight identification criteria to suppress
 the reducible background from $\wjets$ processes, as described in
-Ref.~~\cite{Chatrchyan:2013iaa}.  The events with two same-flavor
+Ref.~\cite{Chatrchyan:2013iaa}.  The events with two same-flavor
 leptons are not considered for the high Drell-Yan background.  The
 $\mathrm{e}\mu$ pair is required to have an invariant mass above
 $12\GeV$, and a \pt above $30\GeV$. Events are also required to have
 \textit{projected}~$\MET$ above 20~$\GeV$, as defined in
 Ref.~\cite{Chatrchyan:2013iaa}. Signal events with exactly zero or one
-jet reconstructed satisfying $\et>30~\GeV$ and $|\eta|<$~4.7 are
-dominated by gluon fusion Higgs boson production, while events with
-exactly two jets are dominated by VBF production.
+jet, satisfying $\et>30~\GeV$ and $|\eta|<$~4.7, are dominated by
+gluon fusion Higgs boson production, while events with exactly two
+jets are dominated by VBF production.
 
 The main backgrounds, the non-resonant $\PW\PW$ production and
-top-quark production ($\ttbar$ and $\tw$ processes, are estimated from
-data.  The reducible background arising from misidentified leptons
-from $\wjets$ processes is estimated from a data control sample with
-loosened lepton identification. The contribution from the $\wgamma^*$
-process is also estimated from data with three leptons. The residual
-minor backgrounds from triboson ($\V\V\V$) and sub-dominant $\PW\PZ$
-and $\PZ\PZ$ are estimated from simulation.
+top-quark production ($\ttbar$ and $\tw$ processes), are estimated
+from data.  The reducible background arising from misidentified
+leptons from $\wjets$ processes, is estimated from a data control
+sample with loosened lepton identification. The contribution from the
+$\wgamma^*$ process is also estimated from events in data with three
+leptons. The residual sub-dominant backgrounds from triboson
+production ($\V\V\V$) and $\PW\PZ$ and $\PZ\PZ$ processes are
+estimated from simulation.
 %
 The event yields observed in data and the expectation from 
 the different processes are given in Ref.~\cite{Chatrchyan:2013iaa}.
-%
+
 As a difference with the $\chanHZZ$ case, only partial reconstruction
 of the four leptons is possible in this channel, because of the two
 undetected neutrinos. Two distributions are used in this case,
-summarizing the kinematics of the two detected charged leptons and the
-$\met$ of the event: the transverse mass of the final state ($\mth$),
-defined as $\mth^2 = 2 \ptll \met (1-\cos\delphillmet)$, and the
-dilepton mass ($\mll$) which is one of the most discriminating
-kinematic variables for a Higgs boson with low mass, and it is also
-correlated to the spin via the azimuthal opening angle between the
-two leptons. 
+summarizing the kinematics of the two charged leptons and the $\met$
+of the event: the transverse mass of the final state ($\mth$), defined
+as $\mth^2 = 2 \ptll \met (1-\cos\delphillmet)$, and the dilepton mass
+($\mll$) which is one of the most discriminating kinematic variables
+for a Higgs boson with low mass, and it is also correlated to the spin
+via the azimuthal opening angle between the two leptons.
 %
 The signal region is defined by $\mll < 200$~GeV, and $60 \leq \mth
 \leq 280~\GeV$.  The distributions of these observables for data, an
 expected SM Higgs signal and backgrounds are presented in
 Fig.~\ref{fig:hwwkinematics} for events with no reconstructed jets,
-which is the most sensitive category of this analysis.
+which constitute the most sensitive category of this analysis.
 %
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]
 \begin{center}
 \centerline{
-\includegraphics[width=0.50\linewidth]{figures/wwpresel_0j_mh125_massll.png}
-~~~~~
-\includegraphics[width=0.50\linewidth]{figures/wwpresel_0j_mh125_mt.png}
+\includegraphics[width=0.50\linewidth]{figures/wwpresel_0j_mh125_massll.pdf}
+\includegraphics[width=0.50\linewidth]{figures/wwpresel_0j_mh125_mt.pdf}
 }
 \caption{ 
   Distributions of the two kinematic observables
@@ -221,14 +222,15 @@ which is the most sensitive category of this analysis.
 \subsection{Kinematics of $\chanHgg$}
 \label{sec:hggkinematics}
 
-For this decay channel, the kinematics of the di-photon events are
-defined by the mesurement of the photon energy and position in the
-ECAL. The selection for the spin-parity analysis is described in
-Ref.~\cite{Khachatryan:2014ira}. The cosine of the scattering angle in
-the Collins--Soper frame, $\cos\theta^*$, is used to discriminate
-between the spin hypotheses.  The angle is defined in the diphoton
-rest frame as that between the collinear photons and the line that
-bisects the acute angle between the colliding protons:
+For this decay channel, the kinematics of the diphoton events are
+defined by the measurement of the photon energy and position in the
+electromagnetic calorimeter (ECAL). The selection for the spin-parity
+analysis is described in Ref.~\cite{Khachatryan:2014ira}. The cosine
+of the scattering angle in the Collins--Soper frame, $\cos\theta^*$,
+is used to discriminate between the spin hypotheses.  The angle is
+defined in the diphoton rest frame as that between the collinear
+photons and the line that bisects the acute angle between the
+colliding protons:
 %
 \begin{equation}
   \costhetastar=2\times\frac{E^{\gamma2}p^{\gamma1}_{z}-E^{\gamma1}p^{\gamma2}_{z}}{\mgg\sqrt{\mgg^{2}+(\ptgg)^{2}}},
@@ -240,10 +242,11 @@ the $z$ components of their momenta, and $\mgg$ and $\ptgg$ are the
 invariant mass and transverse momentum of the diphoton system.  In the
 rest frame of a spin-0 boson the decay photons are isotropic, and so,
 before the acceptance requirements, the distribution of \costhetastar
-is uniformly flat under the SM hypothesis.  In general this is not
-the case for the decay of a spin-2 particle.  Within each diphoton
-class, the events are categorized in five $|\cos\theta^*|$ bins to
+is uniformly flat under the SM hypothesis.  In general this is not the
+case for the decay of a spin-2 particle.  Within each diphoton class,
+the events are categorized in five $|\cos\theta^*|$ bins to
 discriminate between the different spin hypotheses, and in several
-$(\eta, R_9)$ categories to enhance the sensitivity.
+$(\eta, R_9)$ categories to enhance the sensitivity, where $R_9$ is an
+ECAL cluster-shape variable.
 %
 
