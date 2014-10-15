@@ -44,8 +44,8 @@ for the $\chanHWW$ are the same as described in
 %% event, with $\met = |\vmet|$.
 
 For the $\chanHZZ$ decay, events are selected with at least four
-identified and isolated electrons or muons.  Each $\PZ\to
-\ell^+\ell^-$ candidate originating from a pair of leptons of the same
+identified and isolated electrons or muons.  The $\PZ^{(\ast)}\to
+\ell^+\ell^-$ candidate is required to be originating from a pair of leptons of the same
 flavor and opposite charge is required.  The $\ell^+\ell^-$ pair with
 an invariant mass, $m_1$, nearest to the nominal $\PZ$ boson mass is
 retained and is denoted $\PZ_{1}$ if it is in the range $40 \le m_1
@@ -54,13 +54,14 @@ is required to have $12 \le m_2 \le 120 \GeV$.  At least one lepton
 should have $\PT \ge 20 \GeV$, another one $\PT \ge 10 \GeV$ and any
 oppositely charged pair of leptons among the four selected must
 satisfy $m_{\ell\ell} \ge 4 \GeV$. For the spin-parity measurements,
-events are selected in a range around the observed 125.6~\GeV
+events are selected in a range around the observed 125.6~$\GeV$
 resonance, $105.6 \le m_{4\ell} \le 140.6 \GeV$.
 %
 The dominant background, $\Pq\Paq \to \PZ\PZ/\PZ\Pgs$ and $\Pg\Pg \to
 \PZ\PZ/\PZ\Pgs$ processes, are evaluated from simulation, while the
-reducible background, denoted as $\PZ + X$, is estimated from data
-control samples with relaxed lepton identification criteria.
+reducible non-prompt lepton background, denoted as $\PZ + X$, is
+estimated from data control samples with relaxed lepton identification
+criteria.
 %
 The event yields are reported in~~\cite{Chatrchyan:2013mxa}.
 
@@ -72,12 +73,9 @@ arbitrary rotation around the beam axis. These can be conveniently
 expressed in terms of the five angles $\vec\Omega\equiv(\theta^*,
 \Phi_1, \theta_1, \theta_2, \Phi)$, the invariant masses of the
 dilepton pairs, $m_{1}$ and $m_{2}$, and of the four-lepton system,
-$m_{4\ell}$.  We give the distribution of two of these kinematic
+$m_{4\ell}$.  We present the distribution of two of these kinematic
 variables $(m_1, m_{4\ell})$, in data and simulation, in
-Fig.~\ref{fig:hzzkinematics}. The $m_1$ distribution is presented
-range of $121.5 - 130.5$ GeV to enhance the signal purity, with the
-expectations for the SM background, the Higgs boson signal, and some
-characteristic alternative spin-zero scenarios.
+Fig.~\ref{fig:hzzkinematics}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]
@@ -91,9 +89,11 @@ characteristic alternative spin-zero scenarios.
   show the observed data (points with error bars), the expectations
   for the SM background (shaded areas), the SM Higgs boson signal
   (open areas under the solid histogram), and the alternative
-  spin-zero resonances (open areas under the dashed histograms).  
-  The $m_1$ distribution is presented with the
-  requirement $121.5 < m_{4\ell} < 130.5$ GeV.  
+  spin-zero resonances (open areas under the dashed histograms).  The
+  $m_1$ distribution is presented range of $121.5 < m_{4\ell} <
+  130.5$ GeV to enhance the signal purity, with the expectations for
+  the SM background, the Higgs boson signal, and some characteristic
+  alternative spin-zero scenarios.
 \label{fig:hzzkinematics} }
 \end{center}
 \end{figure}
@@ -158,25 +158,26 @@ for a spin-zero resonance: ${\cal D}^{\rm dec}_{\rm bkg}$ and ${\cal
 For the $\chanHWW$ decay, events with exactly one electron and one
 muon are selected, passing tight identification criteria to suppress
 the reducible background from $\wjets$ processes, as described in
-Ref.~\cite{Chatrchyan:2013iaa}.  The events with two same-flavor
-leptons are not considered for the high Drell-Yan background.  The
-$\mathrm{e}\mu$ pair is required to have an invariant mass above
-$12\GeV$, and a \pt above $30\GeV$. Events are also required to have
+Ref.~\cite{Chatrchyan:2013iaa}.  The $\mathrm{e}\mu$ pair is required to
+have an invariant mass above $12\GeV$, and a $\pt$ above
+$30\GeV$. Events are also required to have
 \textit{projected}~$\MET$ above 20~$\GeV$, as defined in
 Ref.~\cite{Chatrchyan:2013iaa}. Signal events with exactly zero or one
 jet, satisfying $\et>30~\GeV$ and $|\eta|<$~4.7, are dominated by
-gluon fusion Higgs boson production, while events with exactly two
-jets are dominated by VBF production.
+gluon fusion Higgs boson production.  The events with two same-flavor
+leptons or with more than one reconstructed jet are not considered for
+the spin-parity analysis.
+
 
 The main backgrounds, the non-resonant $\PW\PW$ production and
 top-quark production ($\ttbar$ and $\tw$ processes), are estimated
 from data.  The reducible background arising from misidentified
 leptons from $\wjets$ processes, is estimated from a data control
-sample with loosened lepton identification. The contribution from the
-$\wgamma^*$ process is also estimated from events in data with three
-leptons. The residual sub-dominant backgrounds from triboson
-production ($\V\V\V$) and $\PW\PZ$ and $\PZ\PZ$ processes are
-estimated from simulation.
+sample with loosened lepton identification. The normalization of the
+contribution from the $\wgamma^*$ process is also estimated from
+events in data with three leptons. The residual sub-dominant
+backgrounds from triboson production ($\V\V\V$) and $\PW\PZ$ and
+$\PZ\PZ$ processes are estimated from simulation.
 %
 The event yields observed in data and the expectation from 
 the different processes are given in Ref.~\cite{Chatrchyan:2013iaa}.
@@ -242,11 +243,10 @@ the $z$ components of their momenta, and $\mgg$ and $\ptgg$ are the
 invariant mass and transverse momentum of the diphoton system.  In the
 rest frame of a spin-0 boson the decay photons are isotropic, and so,
 before the acceptance requirements, the distribution of \costhetastar
-is uniformly flat under the SM hypothesis.  In general this is not the
-case for the decay of a spin-2 particle.  Within each diphoton class,
-the events are categorized in five $|\cos\theta^*|$ bins to
-discriminate between the different spin hypotheses, and in several
-$(\eta, R_9)$ categories to enhance the sensitivity, where $R_9$ is an
-ECAL cluster-shape variable.
+is uniformly flat under the SM hypothesis.  In general, this is not
+the case for the decay of a spin-2 particle.  Within each diphoton
+class, the events are categorized in five $|\cos\theta^*|$ bins to
+discriminate between the different spin hypotheses, and split in
+several categories to enhance the sensitivity.
 %
 
