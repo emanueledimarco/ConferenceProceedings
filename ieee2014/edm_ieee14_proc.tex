@@ -1,0 +1,736 @@
+
+%% bare_jrnl.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% see http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE journal paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[journal]{IEEEtran}
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[journal]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+%\ifCLASSOPTIONcaptionsoff
+%  \usepackage[nomarkers]{endfloat}
+% \let\MYoriglatexcaption\caption
+% \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
+%\fi
+% endfloat.sty was written by James Darrell McCauley and Jeff Goldberg.
+% This package may be useful when used in conjunction with IEEEtran.cls'
+% captionsoff option. Some IEEE journals/societies require that submissions
+% have lists of figures/tables at the end of the paper and that
+% figures/tables without any captions are placed on a page by themselves at
+% the end of the document. If needed, the draftcls IEEEtran class option or
+% \CLASSINPUTbaselinestretch interface can be used to increase the line
+% spacing as well. Be sure and use the nomarkers option of endfloat to
+% prevent endfloat from "marking" where the figures would have been placed
+% in the text. The two hack lines of code above are a slight modification of
+% that suggested by in the endfloat docs (section 8.3.1) to ensure that
+% the full captions always appear in the list of figures/tables - even if
+% the user used the short optional argument of \caption[]{}.
+% IEEE papers do not typically make use of \caption[]'s optional argument,
+% so this should not be an issue. A similar trick can be used to disable
+% captions of packages such as subfig.sty that lack options to turn off
+% the subcaptions:
+% For subfig.sty:
+% \let\MYorigsubfloat\subfloat
+% \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
+% For subfigure.sty:
+% \let\MYorigsubfigure\subfigure
+% \renewcommand{\subfigure}[2][\relax]{\MYorigsubfigure[]{#2}}
+% However, the above trick will not work if both optional arguments of
+% the \subfloat/subfig command are used. Furthermore, there needs to be a
+% description of each subfigure *somewhere* and endfloat does not add
+% subfigure captions to its list of figures. Thus, the best approach is to
+% avoid the use of subfigure captions (many IEEE journals avoid them anyway)
+% and instead reference/explain all the subfigures within the main caption.
+% The latest version of endfloat.sty and its documentation can obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/endfloat/
+%
+% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
+% later in the document, say, to conditionally put the References on a 
+% page by themselves.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{CMS ECAL calibration and timing: performance during LHC Run I and future prospects}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+
+\author{Emanuele~Di~Marco~on~behalf~of~the~CMS~Collaboration,~\IEEEmembership{CERN, CH-1211 Geneva 23, Switzerland}}
+
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+% 
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+
+
+% The paper headers
+%\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
+%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+%\boldmath
+The CMS ECAL is a high-resolution, hermetic, and homogeneous electromagnetic calorimeter made of 75,848 scintillating lead tungstate crystals. It relies on precision calibration of energy and timing in order to achieve and maintain its design performance. A set of inter-calibration procedures is carried out to normalize the differences in crystal light yield and photodetector response between channels. Different physics channels such as low mass di-photon resonances, electrons from W and Z decays and the azimuthal symmetry of low energy deposits from minimum bias events are used. A laser monitoring system is used to measure and correct for response changes, which arise mainly from the harsh radiation environment at the LHC. The different calibration techniques are discussed along with the performance evolution during Run I. Moreover, thanks to the fact that most of the lead-tungstate scintillation light is emitted in about 25 ns, ECAL can be used to accurately determine the time of flight of photons. The stability of the time measurement required to maintain the energy resolution is on the order of 1 ns. The impact on physics is illustrated through the impact on the search and mass measurement of the Higgs boson via its electromagnetic decays. Conclusions are drawn for the performance to be expected from 2015 onwards, following the start of the LHC Run II.
+\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the journal you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals frown on math
+% in the abstract anyway.
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+\end{IEEEkeywords}
+
+
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+\IEEEPARstart{T}{he} Compact Muon Solenoid (CMS) experiment [1] is a general purpose experiment at the Large Hadron Collider (LHC) at CERN, designed to search for the standard model (SM) Higgs boson and for new physics beyond the SM. Many of these searches involve electrons or photons in the final state, and the electromagnetic calorimeter (ECAL) plays an essential role in their reconstruction and identification.
+
+\subsection{The CMS electromagnetic calorimeter}
+The CMS ECAL [2] has been designed to achieve an excellent energy resolution, which is a key point of the searches of the Higgs boson in final states involving electromagnetic particles and in particular in the H$\to\gamma\gamma$ and H$\to4\ell$ channels, and to guarantee a good hermeticity, allowing good performances on the measurement of the missing energy.
+It is a homogeneous and hermetic calorimeter containing 61200 lead tungstate ($\rm PbWO_4$) scintillating crystals mounted in the barrel (EB), closed at each end by endcaps (EE) each containing 7324 crystals. The choice of the $\rm PbWO_4$ with a radiation length $X_0=0.85$ cm and a Moliere radius $R_0$=2.19 cm ensures the compactness of the detector and the radiation hardness necessary to cope with the harsh environment of the collisions at LHC. The scintillation light is read by avalanche photodiodes (APDs) and vacuum phototriodes (VPTs) in the EB and EE
+respectively, resulting in an average of 4.5 photoelectrons per MeV deposited in the crystals. In the EB, which covers the region $\vert\eta\vert<$1.48, the crystals have a truncated pyramidal shape (2.2×2.2 cm2 on the frontal face, and a length of 23 cm) and they are organized in 36 supermodules, 18 on each side of the beam interaction point, each with 20 channels along φ and 85 along η, divided in four modules along η. The EE extends the coverage to $\vert\eta\vert$=3.0, with the crystals (2.86×2.86 cm2 on the frontal face, and a length of 22 cm) arranged in an x-y grid. A preshower detector (ES), based on lead absorbers equipped with silicon strip sensors, is installed in front of EE covering a fiducial region $1.65<\vert\eta\vert<2.6$.
+The ECAL is installed inside the CMS superconductive coil and operate in the strong magnetic field of 3.8 T, used to reconstruct the momentum of charged particle in the CMS silicon tracker which covers the region up to $\vert\eta\vert=2.5$.
+
+
+
+\subsection{Energy reconstruction}
+
+The electrical signal from the photodetectors, after amplification and shaping by a multi-gain preamplifier (MGPA) is digitized by ADCs at a frequency of 40 MHz. An amplification with three possible gains and a further logic chooses the highest non-saturated digital value, allowing a dynamic range of about $5 \times 10^4$ from the least significant bit of about 35 MeV to saturation at 1.7 TeV in the barrel.
+The data read out consists of a series of consecutive digitizations, corresponding to a sequence of samplings of the signal at 40 MHz. A set of 10 consecutive samplings is readout, and the signal amplitude is reconstructed using these samplings. During the LHC Run I a digital filtering algorithm was used, where the signal amplitude was estimated as the linear combination of the $N=10$ samples $S_i$:
+\begin{equation}
+\hat{\cal A}=\sum_{i=1}^{N} w_i \times S_i
+\end{equation}
+where the weights $w_i$ were calculated by minimizing the variance of $\hat{\cal A}$. 
+For LHC Run II the expected average number of pileup interactions is [20-30], with a bunch spacing of 25 ns. This increases the contribution of out of time (other bunch crossing) interactions to the energy estimate. Several methods have been investigate to mitigate the effect of pileup, while keeping the noise filtering optimal. The method that have been investigated are: a single sample on the signal pulse maximum, a Z-transform converting the discrete time signal into the frequency domain, and a template fit with multiple components (``multifit''). The last one is the one currently the algorithm under characterization with large simulation samples for Run II and is described here.
+The multifit algorithm estimates the in-time signal amplitude and up to 9 out of time amplitudes by minimization of the $\chi^2$, given by:
+\begin{equation}
+\chi^2 = \sum_{i=1}^{N} \frac{\left(\sum_{j=1}^M {\cal A}_{j}p_{ij} - S_i \right)^2}{\sigma^2_{S_i}}
+\end{equation}
+where ${\cal A}_{j}$ are the amplitudes of up to $M=10$ interactions. The pulse shapes templates $\mathbf p$ for each bunch crossing $j$ are measured from low pileup p-p collision data recorded by CMS at the beginning of 2013.
+For this reconstruction the total noise and its covariance matrix $\sigma_{S_i}$ are estimated by using regular local runs taken during no-beams periods, with a frequency of about one week. While the total noise and its time correlations between samples dominate the pulses at low energy, the crystal-to-crystal variations in the pulse shape templates dominate the high energy ones. We account for this uncertainty by adding it in quadrature to the noise: $\sigma_{S_i}^2+\sum_{j=1}^M {\cal A}_{j}\sigma_{p_ij}^2$. Examples of the pulse shape templates and their measured for some crystals in the barrel in low pileup data are shown in Fig.~\ref{fig:pulse_shapes}. 
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+\begin{figure*}[!t]
+  \centerline
+    \subfigure{\includegraphics[width=2.5in]{template_EB}}
+    \hfil
+    \subfigure{\includegraphics[width=2.5in]{plot_covariance_template.pdf}}
+    \caption{Left: examples of pulse shapes measured on data in the barrel, after time intercalibration, compared with the one used in the simulation, averaged over the full barrel, with its uncertainty band. Right: example of template covariance matrix measured on data. The correlation of the 6th sample is zero by construction, being the pulse shapes normalized to the maximum signal sample. \label{fig:pulse_shapes} }
+\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+Electrons and photons deposit their energy over many ECAL channels, in fact the electromagnetic shower is not completely contained in a single crystal and, more importantly, the presence of material in front of ECAL causes conversion of photons and bremsstrahlung from electrons, and the radiated energy is spread along $\phi$ by the strong magnetic field. Clustering algorithms are used to collect the energy deposits in ECAL, including the ones related to the radiated energy.
+The electron or photon energy is then estimated as:
+Ee,γ = Fe,γ[G · Σi(Ci · Si(t) · Ai) + EES] (1)
+where, the sum is performed over all the clustered channels labelled by i. Ai is the digital amplitude measured in the channel, Si(t) is a time dependent correction that account for time variation of the channel response mainly due to changes in the crystal transparency, Ci is a relative calibration constant which takes into account differences in the crystal light yields and photodetector responses and G is a scale factor converting the digital scale into GeV. For clusters in the endcap region the corresponding energy in the preshower (EES) is added. Finally Fe,γ is particle dependent correction applied to the clustered energy. It accounts for effects affecting the energy reconstruction related to the geometry of the detector, the upstream material, and the clustering of energy emitted by bremsstrahlung or photon conversion.
+This factorization of the various contributions to the electromagnetic energy determination en- ables stability and intercalibration to be studied separately from material and geometry effects.
+Measurements with electron beams [3] demonstrate that the ECAL crystals meet the require- ment for an excellent energy resolution, with a stochastic term of 2.8\% GeV1/2 and a noise term of 12\% GeV. The measured constant terms of 0.3\% demonstrates an excellent shower contain- ment and longitudinal uniformity of the light collection. Compared to the measurements with the electron beams, the energy resolution for electrons and photons in CMS receives additional contributions from the presence of pile-up, from effects related to the presence of the material in front of ECAL, and from detector instabilities and channel-to-channel response spread. In order to profit on the excellent intrinsic energy resolution the two latter contributions must be kept to within 0.4\%.
+
+\subsection{Time reconstruction}
+The scintillation decay time of the crystals is comparable to the LHC bunch crossing interval of 25 ns, and about 80\% of the light is emitted in 25 ns. This allows excellent time determination capabilities. The time of each ECAL hit can be measured through the ratios of the consecutive 10 values of the pulse shape, sampled every 25 ns.  The stability of the time measurement required to maintain the energy resolution is on the order of 1 ns. The better the precision of time measurement and synchronization, the larger the rejection of backgrounds with
+a broad time distribution. Such backgrounds are out-of-time proton-proton interactions, cosmic rays, beam halo muons, and electronic noise. Precise time measurement also makes it possible to put constraints on the presence of particles predicted by models beyond the Standard Model, identifying photons from the decay of long-lived new particles, which reach the calorimeter out- of-time with respect to particles travelling at the speed of light from the interaction point [3]. To achieve these goals the time measurement performance both at low energy (1 GeV or less) and high energy (several tens of GeV for showering photons) becomes relevant.
+
+\section{Energy calibrations}
+\IEEEPARstart{I}{n} the following the calibration of the ECAL response and the resulting performance in the data collected in the 2012 are illustrated. For detailed description of the ECAL performances in 2011 the reader is referred to [4].
+
+\subsection{Corrections for the change of the response in time}
+Radiation can create color centers in the crystals reducing their transparency and therefore reducing the measured response to the deposited energy. The color centers partially anneal with thermal energy so that the loss in transparency depends on the dose rate, which for ECAL varies along η, and in absence of radiation a partial recovery of the transparency is observed.
+While an intense R\&D program led to the production of radiation resistant PbWO4 crystals, a residual radiation damage remains and needs to be corrected for. Thus, the changes in transparency are measured by a dedicated “laser monitoring” system[5] (LM) which injects a laser light (λ =440 nm, close to the peak of the scintillation light spectrum for PbWO4) into each single crystal, with a cycle of 40 minutes. The change in transparency (R/R0) does not directly measures the change in response for the scintillation light (S/S0) since the two have different spectra and the optical photons travel different paths to reach the photodetectors, but they can be related by a power law:
+\begin{equation}
+\frac{S}{S_0} = \left(\frac{R}{R_0}\right)^\alpha
+\end{equation}
+By the end of the LHC Run I in 2012 the loss in transparency was less than 6\% in EB and less than 30\% in the EE region within the tracker acceptance (|η| <2.5), while it reached 70\% in the most forward EE region. The corrections for transparency loss (LC) can be validated with collisions data, by looking at the stability of the reconstructed invariant mass of π0 and of the distribution of E/p for isolated electrons, where E is the energy measured in the calorimeter and p is the momentum measured in the tracker.
+Applying the LC the stability is better than 0.1\% in the barrel and 0.4\% in the endcaps. As an example the stability during 2012 measured with the E/p distribution is reported in figure xxxx.
+Measurements performed with electron beams on a small ensemble of crystals show a dispersion
+Figure xxx. Stability of the E/p scale during 2012, before (red) and after (green) the LC, for the ECAL barrel. Each point is obtained with a statistic of 20000 electrons. The projections along the Y axis are shown in the histograms on the right side.
+in the values of α of about 10\%. In deriving the LC according to equation 2 a common value (one for EB and one for EE) has been used. The resulting residual imperfection of the LC due to the dispersion in the values of α can be recovered by allowing a time dependence of the calibrations constants as explained in the next section.
+
+\subsection{Intercalibrations and energy scale}
+The relative calibration (“intercalibration” IC) is obtained in situ employing collision data, after applying the LC, with different methods employing, the azimuthal symmetry of the energy flow (``$\phi$-symmetry''), photons pairs from the $\pi^0$ decay, and isolated electrons (E/p).
+
+The $\phi$-symmetry is based on the equalization of the average energy measured in the different channels placed at the same η. It employs a dedicated data streams with a very reduced event information allowing to store a high rate of events ($\sim$ 1.5 kHz), and it reaches for each LHC fill cycle a statistical accuracy better than 0.2\% (0.4\%) in the barrel (endcap). The accuracy of the method is indeed limited to few percents by the systematic related to the uncertainty in the knowledge of the material in front of ECAL. Since the systematic does not varies with time the method can be used to track possible time dependencies of the IC values. Indeed in 2012 a drift of the ICs was observed compatible with the imperfection of the LC due to the spread of the value of $\alpha$ in the equation 2.
+
+The $\pi^0$ mass method is based on the reconstruction of the peak in the spectrum of the invariant mass of unconverted photon pairs due to $\pi^0$ and $\eta$ decays. The photons are recon- structed as 3 × 3 matrices of calorimeter channels, and an iterative method is used to determine the IC value of each single channel. It employs a dedicated data streams at high rate( $\sim$ 7 kHz) and it reaches a 0.5\% precision in the central barrel, dominated by systematics when using a data sample corresponding to about 45 days of data taking. With the high pile-up of the LHC running in 2012 the reconstruction of the peak of $\pi^0$ in the region at $\vert\eta\vert\ge2$ was challenging and only the peak from $\eta\to\gamma\gamma$ has been used.
+
+The E/p method is based on the comparison of the energy measured in the calorimeter (eq 1) to the momentum measured by the tracker for isolated electron, and an iterative procedure is used to extract the IC value for each single channel. The method requires the full 2012 dataset and in the central barrel its precision reaches the systematic limit of 0.5\%, while for $\vert\eta\vert\ge1$ the statistical contribution is still significant.
+These methods may be affected by η dependent systematics due for instance to the effect of pile-up or of the material in front of ECAL, therefore they are employed to obtain a relative calibration of the channels at the same $\eta$ (``$\eta$ ring''), and their results are combined accordingly to their precision. The precision of the different methods and of their combination is reported in figure 2. In the region $\vert\eta\vert\eta\ge2/5$, above the tracker acceptance, the E/p method can not be used and the high pile-up prevents the reconstruction of the invariant mass peak from $\pi^0$ or $\eta$, therefore only the ICs from the $\phi$-symmetry are available.
+To compensate for the imperfection in the LC, the time dependence observed in the ICs from the $\phi$-symmetry method is propagated to the final calibration, in time intervals of the order of one month.
+The relative calibration of the $\eta$ rings ($\eta$ scale) is obtained from the peak from the Z boson in the distribution of the invariant mass of electron pairs, selecting a sample of electrons with a low emission of bremsstrahlung. The $\eta$ scale is set to match the expectation from a detailed MonteCarlo simulation of the detector response to pp $\to$ Z $\to e^+e^-$.
+Finally the overall energy scale G is set, separately for EB and EE, such that the reconstructed Z peak in data matches the one in the MonteCarlo.
+
+
+\section{Energy resolution and scale}
+\IEEEPARstart{T}{he} energy resolution for electrons and photons plays a crucial role in the search for the Higgs with electromagnetic final states, and in particular for the search in the Higgs decays channel H$\to\gamma\gamma$, since it affects the modelling of the expected signal. The accuracy of the calibration directly contributes to the energy resolution with a dilution factor ∼0.7 due to the sharing of the energy among different channels. Indeed the actual energy resolution for electrons can be measured from the shape of the invariant mass distribution of electron pairs in the region dominated by $Z\to e^+e^-$ events. Figure 3 reports the measured energy resolution as a function of  $\vert\eta\vert$. The performance with the calibration performed with the full 2012 dataset (blue) can be compared with the one obtained with an initial calibration (grey), and an improvement can be seen in particular in the endcaps. The figure reports also the expected resolution from a Monte Carlo simulation. The discrepancy between data and Monte Carlo measured for electron is propagated to the Monte Carlo simulation of processes involving photons. For an improved and detailed understanding of the ECAL performances a ``Run dependent'' Monte Carlo simulation have been developed which mimics the evolving conditions, in terms of pile-up, noise and crystal transparency, during the LHC run in 2012. Indeed the run-dependent Monte Carlo (not shown in figure 3) has been used to derive the results of the search of the Higgs bosons in the decay channel H$\to\gamma\gamma$, which is particularly sensitive to the ECAL energy resolution.
+
+\section{Time resolution measurement}
+\IEEEPARstart{T}{he} time resolution is extracted by comparing the time measured in ECAL hits which are, or can be made, synchronous. Two methods are used:
+\begin{enumerate}
+\item comparisons of the time of the two electrons of a Z decay. The time of the electron corresponds to the one of the most energetic hit of the deposit (cluster). The time is corrected by the time-of-flight of the electrons, which is properly determined from the primary vertex position, obtained from the electron tracks. The two clusters are required to pass loose criteria on the shape of the deposit and the resulting invariant mass has to be consistent with the Z boson mass (60 GeV<m(ee)<150 GeV). The energy of each of the two hits must fall in the range 10 GeV<E<120 GeV. The resolution is extracted as the σ parameter of a gaussian fit to the core of the time difference distribution. The resulting resolution is plotted as a function of the effective amplitude, which depends on
+the amplitudes measured in the two crystals as A = A A 􏰂A2 + A2. The amplitude is eff 12 1 2
+in units of ADC counts, with a dynamic range of 4000 and the electonic noise corresponds to about 1 count. This is shown in Fig. 1. The noise term is very similar to the one obtained prior to collisions [4] and the constant term turns out to be about 150 ps. The value obtained for the constant term is remarkable but it is still far from the test beam one, which was about 20 ps.
+
+\item the two most energetic neighboring crystals of a photon cluster, with a similar amount of energy. The second requirement is to minimize the shower propagation effects. Additional selection criteria are applied, based on the shape of the ECAL cluster
+and on the energy of the ECAL hit (E<120 GeV). The resulting resolution, as a function of the effective amplitude, is shown in Fig. 2. Here the constant term is smaller, about 70 ps, closer to the test beam results.
+\end{enumerate}
+
+A further study, comparing crystals belonging to either the same or different readout units, is also performed. The redaout unit corresponds to a trigger tower which is a 5x5 matrix of crystals. This is to see if the origin of this residual 70 ps constant term is due to residual timing jitter in the electronics or the clock distribution to the individual readout units. In Figures 3 and 4 the result for crystals in the same and different readout units are shown, respectively. The different constant term (67 ps vs 130 ps) does not explain the difference with respect to the test beam results but indicates that there are effects related to the electronics which need to be further investigated.
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+
+
+% An example of a floating table. Note that, for IEEE style tables, the 
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals use top floats exclusively.
+% Note that, LaTeX2e, unlike IEEE journals, places footnotes above bottom
+% floats. This can be corrected via the \fnbelowfloat command of the
+% stfloats package.
+
+
+
+\section{Conclusion}
+The conclusion goes here.
+
+
+
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\begin{thebibliography}{1}
+
+\bibitem{IEEEhowto:kopka}
+H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+\end{thebibliography}
+
+% biography section
+% 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{biography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+
+
+% that's all folks
+\end{document}
+
+
