@@ -46,6 +46,8 @@
 \fi
 \usepackage[cmex10]{amsmath}
 \usepackage[tight,footnotesize]{subfigure}
+\usepackage[switch]{lineno}
+\linenumbers
 
 % *** Do not adjust lengths that control margins, column widths, etc. ***
 % *** Do not use packages that alter fonts (such as pslatex).         ***
@@ -115,17 +117,20 @@ The multi-fit algorithm estimates the in-time signal amplitude and up to 9 out o
 \chi^2 = \sum_{i=1}^{N} \frac{\left(\sum_{j=1}^M {\cal A}_{j}p_{ij} - S_i \right)^2}{\sigma^2_{S_i}}
 \end{equation}
 where ${\cal A}_{j}$ are the amplitudes of up to $M=10$ interactions. The pulse templates $\mathbf{\vec p}_j$ for each bunch crossing $j$ have the same shape, but a time shift of 25 ns for each BX hypothesis. The amplitudes for the BXs from -5 to -1 (early out-of-time pile-up), 0 (sum of the in-time pulse and in-time pile-up pulses), and +1 to +4 (late out-of-time pile-up) are floated in the fit.
-The pulse templates for each crystal are measured from low pile-up $pp$ collision data recorded by CMS at the beginning of 2013. Examples of the pulse shape templates measured for some crystals in the barrel are shown in Fig.~\ref{fig:pulse_shapes_template}. They are compared with the simulation, which is generated from the pulse shape measured in test beam data, with its envelope band, represented by time jitter variations and the fluctuations in the arrival time of the photons to the ECAL.
+The pulse templates for each crystal are measured from low pile-up $pp$ collision data recorded by CMS at the beginning of 2013. 
+%Examples of the pulse shape templates measured for some crystals in the barrel are shown in Fig.~\ref{fig:pulse_shapes_template}. They are compared with the simulation, which is generated from the pulse shape measured in test beam data, with its envelope band, represented by time jitter variations and the fluctuations in the arrival time of the photons to the ECAL.
 
-The sample-to-sample correlations in the pulse templates are taken into account by a $N \times N$ covariance matrix ($\sigma_{p_i}$) measured from the same data. The total electronic noise and its covariance matrix $\sigma_{S_i}$ are estimated by using local runs taken during no-beams periods, with a frequency of about one week, and stored into the conditions database. The correlation of the noise among the time samples decreases when increasing the interval among them, with an exponential constant which is characteristic of the shaping time of the electronics, reaching a plateau dominated by the low-frequency pickup noise. This matrix is very stable within the different barrel or endcap partitions, as shown by the autocorrelation function (top row of the normalized covariance matrix) in Fig.~\ref{fig:noise_autocorrelation}. The total noise is taken as the quadrature sum of the pulse shapes uncertainty and the electronic noise: $\sigma_{S_i}^2+\sum_{j=1}^M {\cal A}_{j}\sigma_{p_ij}^2$. The former dominates the uncertainty of low energy pulses, while the latter dominate the high energy pulses.
+The sample-to-sample correlations in the pulse templates are taken into account by a $N \times N$ covariance matrix ($\sigma_{p_i}$) measured from the same data. The total electronic noise and its covariance matrix $\sigma_{S_i}$ are estimated by using local runs taken during no-beams periods, with a frequency of about one week, and stored into the conditions database. The correlation of the noise among the time samples decreases when increasing the interval among them, with an exponential constant which is characteristic of the shaping time of the electronics, reaching a plateau dominated by the low-frequency pickup noise. This matrix is very stable within the different barrel or endcap partitions. 
+%as shown by the autocorrelation function (top row of the normalized covariance matrix) in Fig.~\ref{fig:noise_autocorrelation}. 
+The total noise is taken as the quadrature sum of the pulse shapes uncertainty and the electronic noise: $\sigma_{S_i}^2+\sum_{j=1}^M {\cal A}_{j}\sigma_{p_ij}^2$. The former dominates the uncertainty of low energy pulses, while the latter dominate the high energy pulses.
 %
-\begin{figure}[!t]
-  \begin{center}
-    \subfigure[]{\includegraphics[width=3.0in]{template_EB}\label{fig:pulse_shapes_template}}
-    \subfigure[]{\includegraphics[width=3.0in]{autocorrelation_barrel}\label{fig:noise_autocorrelation}}
-    \caption{Examples of pulse shapes measured on data in the barrel, after time inter-calibration, compared with the one used in the simulation, averaged over the full barrel, with its uncertainty band (a). Example of the noise autocorrelation measured on 2012 data, for several partitions of the barrel (b). \label{fig:pulse_shapes} }
-  \end{center}
-\end{figure}
+%% \begin{figure}[!t]
+%%   \begin{center}
+%%     \subfigure[]{\includegraphics[width=3.0in]{template_EB}\label{fig:pulse_shapes_template}}
+%%     \subfigure[]{\includegraphics[width=3.0in]{autocorrelation_barrel}\label{fig:noise_autocorrelation}}
+%%     \caption{Examples of pulse shapes measured on data in the barrel, after time inter-calibration, compared with the one used in the simulation, averaged over the full barrel, with its uncertainty band (a). Example of the noise autocorrelation measured on 2012 data, for several partitions of the barrel (b). \label{fig:pulse_shapes} }
+%%   \end{center}
+%% \end{figure}
 
 
 Given the number of allowed pulses is $N=10$ for the 25 ns bunch spacing case, in order to have always a constrained fit with the 10 digitized samples we impose that each of the amplitudes is positive. The technique of Non-Negative-Least-Squares \cite{nnls} is adopted to perform the $\chi^2$ minimization of Eq.~\ref{eqn:chi2multifit} with such a constraint, within $\approx$ 10 ms/event with an average number of pile-up interaction of 40 and 25 ns bunch spacing. Having such a fast algorithm is necessary especially for the HLT needs. Examples of one fit for a hit in the barrel and a hit in the endcap are shown in Fig.~\ref{fig:multifits}.
